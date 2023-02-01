@@ -46,7 +46,7 @@ function deleteButtons(){
 
 }
 
-function Test5(){
+function reinstateButtons(){
     var ElementTest = document.getElementById("FarmDrawer").style;
     ElementTest.position = "absolute";
 }
