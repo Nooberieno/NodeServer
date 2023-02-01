@@ -40,13 +40,13 @@ function drawDayCity(){
 }
 
 function Test4(){
-    var ElementTest = document.getElementById("button1").style;
+    var ElementTest = document.getElementById("FarmDrawer").style;
     ElementTest.position = "relative";
 
 }
 
 function Test5(){
-    var ElementTest = document.getElementById("button1").style;
+    var ElementTest = document.getElementById("FarmDrawer").style;
     ElementTest.position = "absolute";
 }
 
