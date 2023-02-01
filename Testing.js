@@ -21,18 +21,22 @@ img6.src = './road.png';
 var canvas = document.getElementById("Testing");
 var ctx = canvas.getContext("2d");
 
+drawCity();
+function drawCity(){
+    ctx.drawImage(img1, 0, 0, window.innerWidth, window.innerHeight);
+}
 
-function Test() {
-    ctx.drawImage(img2, 0, 0, 1920, 1080);
+function drawFarm() {
+    ctx.drawImage(img2, 0, 0, window.innerWidth, window.innerHeight);
 }
 
 
-function Test2() {
-    ctx.drawImage(img3, 0, 0, 1920, 1080);
+function drawNight(){
+    ctx.drawImage(img3, 0, 0, window.innerWidth, window.innerHeight);
 }
 
-function Test3(){
-    ctx.drawImage(img4, 0, 0, 1920, 1080);
+function drawDayCity(){
+    ctx.drawImage(img4, 0, 0, window.innerWidth, window.innerHeight);
 }
 
 function Test4(){
