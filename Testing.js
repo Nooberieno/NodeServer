@@ -39,8 +39,9 @@ function drawDayCity(){
     ctx.drawImage(img4, 0, 0, window.innerWidth, window.innerHeight);
 }
 
-function Test4(){
+function deleteButtons(){
     var ElementTest = document.getElementById("FarmDrawer").style;
+
     ElementTest.position = "relative";
 
 }
