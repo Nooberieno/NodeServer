@@ -30,7 +30,6 @@ function drawFarm() {
     ctx.drawImage(img2, 0, 0, window.innerWidth, window.innerHeight);
 }
 
-
 function drawNight(){
     ctx.drawImage(img3, 0, 0, window.innerWidth, window.innerHeight);
 }
@@ -55,4 +54,20 @@ function Test7(){
    let value = document.getElementById("inputbox").value;
    console.log(value)
 
+}
+
+
+document.onkeydown=(event)=>{
+    switch(event.key){
+        case "Enter":
+            //if box is selected then do Test7();
+                Test7();
+            break;
+    }
+}
+document.onkeyup=(event)=>{
+    switch(event.key){
+        case "Enter":
+            break;
+    }
 }
