@@ -60,8 +60,10 @@ function Test7(){
 document.onkeydown=(event)=>{
     switch(event.key){
         case "Enter":
-            //if box is selected then do Test7();
-                Test7();
+            if (document.activeElement.id == 'inputbox') {
+                Test7();            
+            }
+            
             break;
     }
 }
