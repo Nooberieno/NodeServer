@@ -20,11 +20,10 @@ img6.src = './road.png';
 
 var canvas = document.getElementById("Testing");
 var ctx = canvas.getContext("2d");
-
 ctx.canvas.height=window.innerHeight
 ctx.canvas.width=window.innerWidth
 
-let pronouns=[]
+var pronouns=[]
 
 function drawCity(){
     ctx.drawImage(img1, 0, 0, window.innerWidth, window.innerHeight);
@@ -46,13 +45,13 @@ function deleteButtons(){
     var ElementTest = document.getElementById("FarmDrawer").style;
 
     ElementTest.position = "relative";
-
 }
 
 function reinstateButtons(){
     var ElementTest = document.getElementById("FarmDrawer").style;
     ElementTest.position = "absolute";
 }
+
 
 function LogValue(){
    let value = document.getElementById("inputbox").value;
@@ -61,9 +60,11 @@ function LogValue(){
    console.log(pronouns)
 }
 
+
 function ResetPronounArray(){
     pronouns.length=0
 }
+
 
 document.onkeydown=(event)=>{
     switch(event.key){
