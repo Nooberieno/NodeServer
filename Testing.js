@@ -61,7 +61,7 @@ function LogValue(){
    console.log(pronouns)
 }
 
-function Test(){
+function ResetPronounArray(){
     pronouns.length=0
 }
 
