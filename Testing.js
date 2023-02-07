@@ -51,13 +51,8 @@ function reinstateButtons(){
     ElementTest.position = "absolute";
 }
 
-let Text=""
-function Test6(){
-    let Text = prompt("enter a name please")
-    if (Text==""){
-        alert("type a name dumbass")
+function Test7(){
+   let value = document.getElementById("inputbox").value;
+   console.log(value)
 
-    } else{
-        alert(Text)
-    }
 }
