@@ -21,7 +21,9 @@ img6.src = './road.png';
 var canvas = document.getElementById("Testing");
 var ctx = canvas.getContext("2d");
 
-drawCity();
+ctx.canvas.height=window.innerHeight
+ctx.canvas.width=window.innerWidth
+
 function drawCity(){
     ctx.drawImage(img1, 0, 0, window.innerWidth, window.innerHeight);
 }
