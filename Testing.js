@@ -24,6 +24,8 @@ var ctx = canvas.getContext("2d");
 ctx.canvas.height=window.innerHeight
 ctx.canvas.width=window.innerWidth
 
+const pronouns=[]
+
 function drawCity(){
     ctx.drawImage(img1, 0, 0, window.innerWidth, window.innerHeight);
 }
@@ -55,7 +57,8 @@ function reinstateButtons(){
 function LogValue(){
    let value = document.getElementById("inputbox").value;
    console.log(value)
-
+   pronouns.push(value)
+   console.log(pronouns)
 }
 
 
