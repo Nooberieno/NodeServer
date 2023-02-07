@@ -24,7 +24,7 @@ var ctx = canvas.getContext("2d");
 ctx.canvas.height=window.innerHeight
 ctx.canvas.width=window.innerWidth
 
-const pronouns=[]
+let pronouns=[]
 
 function drawCity(){
     ctx.drawImage(img1, 0, 0, window.innerWidth, window.innerHeight);
@@ -61,6 +61,9 @@ function LogValue(){
    console.log(pronouns)
 }
 
+function Test(){
+    pronouns.length=0
+}
 
 document.onkeydown=(event)=>{
     switch(event.key){
