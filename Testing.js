@@ -50,7 +50,7 @@ function reinstateButtons(){
     ElementTest.position = "absolute";
 }
 
-function Test7(){
+function LogValue(){
    let value = document.getElementById("inputbox").value;
    console.log(value)
 
@@ -61,7 +61,7 @@ document.onkeydown=(event)=>{
     switch(event.key){
         case "Enter":
             if (document.activeElement.id == 'inputbox') {
-                Test7();            
+                LogValue();            
             }
             
             break;
