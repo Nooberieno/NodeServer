@@ -25,9 +25,9 @@ ctx.canvas.width=window.innerWidth
 
 var pronouns=[]
 
-function Test(){
+function AddText(){
     ctx.font = "48px serif";
-    ctx.fillText("Hello Motherfucker", 25, 50)
+    ctx.fillText("Hello Motherfucker", 475, 300)
 }
 
 function drawCity(){

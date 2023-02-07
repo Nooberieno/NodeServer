@@ -121,3 +121,15 @@ button:hover{
     padding: 5px, 5px, 7px, 5px;
     margin: 2px;
 }
+
+.TextAdder{
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px, 5px, 7px, 5px;
+    margin: 2px;
+    cursor: pointer;
+}
