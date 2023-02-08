@@ -12,11 +12,11 @@ NightImage.src = './Night.png';
 const DayCityImage = new Image();
 DayCityImage.src = './Day.png';
 
-const img5 = new Image();
-img5.src = './forest.png';
+const ForestImage = new Image();
+ForestImage.src = './forest.png';
 
-const img6 = new Image();
-img6.src = './road.png';
+const RoadImage = new Image();
+RoadImage.src = './road.png';
 
 var canvas = document.getElementById("Testing");
 var ctx = canvas.getContext("2d");
@@ -44,6 +44,14 @@ function drawNight(){
 
 function drawDayCity(){
     ctx.drawImage(DayCityImage, 0, 0, window.innerWidth, window.innerHeight);
+}
+
+function drawForest(){
+    ctx.drawImage(ForestImage,0,0,window.innerWidth,window.innerHeight)
+}
+
+function drawRoad(){
+    ctx.drawImage(RoadImage,0,0,window.innerWidth,window.innerHeight)
 }
 
 function deleteButtons(){
