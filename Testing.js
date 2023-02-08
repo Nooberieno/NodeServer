@@ -1,16 +1,16 @@
 
 
-const img1 = new Image();
-img1.src = './city.png';
+const CityImage = new Image();
+CityImage.src = './city.png';
 
-const img2 = new Image();
-img2.src = './farm.png'
+const FarmImage = new Image();
+FarmImage.src = './farm.png'
 
-const img3 = new Image();
-img3.src = './Night.png';
+const NightImage = new Image();
+NightImage.src = './Night.png';
 
-const img4 = new Image();
-img4.src = './Day.png';
+const DayCityImage = new Image();
+DayCityImage.src = './Day.png';
 
 const img5 = new Image();
 img5.src = './forest.png';
@@ -31,19 +31,19 @@ function AddText(){
 }
 
 function drawCity(){
-    ctx.drawImage(img1, 0, 0, window.innerWidth, window.innerHeight);
+    ctx.drawImage(CityImage, 0, 0, window.innerWidth, window.innerHeight);
 }
 
 function drawFarm() {
-    ctx.drawImage(img2, 0, 0, window.innerWidth, window.innerHeight);
+    ctx.drawImage(FarmImage, 0, 0, window.innerWidth, window.innerHeight);
 }
 
 function drawNight(){
-    ctx.drawImage(img3, 0, 0, window.innerWidth, window.innerHeight);
+    ctx.drawImage(NightImage, 0, 0, window.innerWidth, window.innerHeight);
 }
 
 function drawDayCity(){
-    ctx.drawImage(img4, 0, 0, window.innerWidth, window.innerHeight);
+    ctx.drawImage(DayCityImage, 0, 0, window.innerWidth, window.innerHeight);
 }
 
 function deleteButtons(){
