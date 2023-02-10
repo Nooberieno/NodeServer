@@ -78,6 +78,15 @@ function ResetPronounArray(){
     pronouns.length=0
 }
 
+function ajaxtest(){
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function(){
+        document.getElementById("TextAdder").innerHTML = this.responseText;
+    }
+    xhttp.open("Get", "test.txt", true)
+    xhttp.send();
+}
+console.log(ajaxtest())
 
 document.onkeydown=(event)=>{
     switch(event.key){
