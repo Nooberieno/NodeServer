@@ -1,5 +1,3 @@
-
-
 const CityImage = new Image();
 CityImage.src = './city.png';
 
