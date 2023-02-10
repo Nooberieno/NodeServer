@@ -84,7 +84,6 @@ function ajaxtest(){
     xhttp.open("Get", "test.txt", true)
     xhttp.send();
 }
-console.log(ajaxtest())
 
 document.onkeydown=(event)=>{
     switch(event.key){
