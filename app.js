@@ -11,3 +11,11 @@ app.get("/", function(req, res){
 app.listen(port, () => console.log('listening on port ${port}'))
 
 app.use(express.static(__dirname));
+
+const pool = mysql.createPool({
+    connectionLimit : 10,
+    host : 'localhost',
+    user : 'root',
+    password : 'password',
+    database : 'database_test',
+})

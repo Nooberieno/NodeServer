@@ -69,6 +69,8 @@ function LogValue(){
    console.log(value)
    pronouns.push(value)
    console.log(pronouns)
+   const pronouns1 = pronouns[0]
+   console.log(pronouns1)
 }
 
 
