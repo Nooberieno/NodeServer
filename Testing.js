@@ -81,7 +81,7 @@ function ajaxtest(){
     xhttp.onload = function(){
         document.getElementById("TextAdder").innerHTML = this.responseText;
     }
-    xhttp.open("Get", "test.txt", true)
+    xhttp.open("Get", "public/test.txt", true)
     xhttp.send();
 }
 
