@@ -1,20 +1,20 @@
 const CityImage = new Image();
-CityImage.src = './city.png';
+CityImage.src = './public/city.png';
 
 const FarmImage = new Image();
-FarmImage.src = './farm.png'
+FarmImage.src = './public/farm.png'
 
 const NightImage = new Image();
-NightImage.src = './Night.png';
+NightImage.src = './public/Night.png';
 
 const DayCityImage = new Image();
-DayCityImage.src = './Day.png';
+DayCityImage.src = './public/Day.png';
 
 const ForestImage = new Image();
-ForestImage.src = './forest.png';
+ForestImage.src = './public/forest.png';
 
 const RoadImage = new Image();
-RoadImage.src = './road.png';
+RoadImage.src = './public/road.png';
 
 var canvas = document.getElementById("Testing");
 var ctx = canvas.getContext("2d");

@@ -6,7 +6,7 @@ body{
     align-items: center;
 }
 #Testing{
-    background-image: url("city.png");
+    background-image: url("public/city.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
