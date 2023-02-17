@@ -68,7 +68,6 @@ function LogValue(){
    let value = document.getElementById("inputbox").value;
    console.log(value)
    pronouns.push(value)
-   console.log(pronouns)
    const pronouns1 = pronouns[0]
    console.log(pronouns1)
 }
@@ -80,11 +79,19 @@ function ResetPronounArray(){
 
 function ajaxtest(){
     const xhttp = new XMLHttpRequest();
-    xhttp.onload = function(){
-        document.getElementById("TextAdder").innerHTML = this.responseText;
-    }
-    xhttp.open("Get", "public/test.txt", true)
-    xhttp.send();
+    xhttp.open("POST", "./Index.json")
+    xhttp.setRequestHeader("Accept", "application/json")
+    xhttp.setRequestHeader("Content-Type", "application/json")
+
+    xhttp.onreadystatechange = function(){
+        if (xhttp.readyState === 4){
+        console.log(xhttp.status)
+        console.log(xhttp.responseText)
+    }}
+    let data = '{"Id":78912, "Pronouns": "our"}';
+
+    xhttp.send(data);
+
 }
 
 document.onkeydown=(event)=>{
