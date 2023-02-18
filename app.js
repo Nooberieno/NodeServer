@@ -18,3 +18,11 @@ app.use(function(req, res, next){
     );
     next;
 })
+
+var RateLimiter = require('express-rate-limit');
+var Limiter = new RateLimiter({
+    windowMs: 1*60*1000,
+    Max: 5
+})
+
+app.use(Limiter)
