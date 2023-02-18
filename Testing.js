@@ -79,8 +79,7 @@ function ResetPronounArray(){
 
 function ajaxtest(){
     const xhttp = new XMLHttpRequest();
-    xhttp.open("POST", ".index.json")
-    xhttp.setRequestHeader("Accept", "application/json")
+    xhttp.open("POST", "index.json", true)
     xhttp.setRequestHeader("Content-Type", "application/json")
 
     xhttp.onreadystatechange = function(){
