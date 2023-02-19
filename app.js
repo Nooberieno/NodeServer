@@ -1,12 +1,13 @@
 const express = require('express');
+const fs = require('fs')
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 var RateLimiter = require('express-rate-limit');
-var Limiter = new RateLimiter({
-    windowMs: 1*60*1000,
-    Max: 5
+var Limiter = RateLimiter({
+    windowMs: 900,
+    Max: 20
 })
 
 app.use(Limiter)
@@ -22,8 +23,16 @@ app.use(express.static(__dirname));
 app.use(function(req, res, next){
     res.setHeader(
         'Content-Security-Policy',
-        "connect-src 'self'"
+        "default-src 'self'; connect-src 'self'"
     );
     next;
 })
 
+const Content = "content"
+fs.appendFile("./test.txt", Content + "\n", err =>{
+    if(err){
+        console.error(err)
+    }
+    console.log("file saved succesfully")
+
+})

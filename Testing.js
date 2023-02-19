@@ -63,7 +63,7 @@ function reinstateButtons(){
     ElementTest.position = "absolute";
 }
 
-
+-
 function LogValue(){
    let value = document.getElementById("inputbox").value;
    console.log(value)
@@ -79,18 +79,14 @@ function ResetPronounArray(){
 
 function ajaxtest(){
     const xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "index.json", true)
-    xhttp.setRequestHeader("Content-Type", "application/json")
-
+    xhttp.open("get", "test.txt", true)
     xhttp.onreadystatechange = function(){
-        if (xhttp.readyState === 4){
-        console.log(xhttp.status)
-        console.log(xhttp.responseText)
-    }}
-    let data = '{"Id":78912, "Pronouns": "our"}';
-
-    xhttp.send(data);
-
+        if (xhttp.responseText !=""){
+            var txt = xhttp.responseText.split("\n")
+            document.getElementById("TextAdder").innerHTML = txt[0]
+        }
+    }
+    xhttp.send()
 }
 
 document.onkeydown=(event)=>{
@@ -109,5 +105,3 @@ document.onkeyup=(event)=>{
             break;
     }
 }
-
-
