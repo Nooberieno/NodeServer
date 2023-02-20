@@ -41,3 +41,8 @@ function addToFile(){fs.appendFile("./test.txt", Content + "\n", err =>{
 
 })
 }
+
+app.get('/addToFile', (req, res) =>{
+    addToFile();
+    res.send('Succes');
+})

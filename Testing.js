@@ -105,7 +105,11 @@ document.onkeyup=(event)=>{
     }
 }
 
-function addToFile(){
+function AddToFile(){
     const xhttp = new XMLHttpRequest();
-    xhttp.open()
+    xhttp.open("get", "/app.js", true)
+    xhttp.onreadystatechange = function() {
+        console.log(this.responseText)
+    }
+    xhttp.send()
 }
