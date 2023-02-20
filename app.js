@@ -7,11 +7,11 @@ import * as fs from 'fs'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4675;
 
 var Limiter = rateLimit({
     windowMs: 1,
-    Max: 25
+    Max: 5
 })
 
 app.use(Limiter)
@@ -20,7 +20,7 @@ app.get("/", function(req, res){
     res.sendFile(__dirname + "/index.html")
 })
 
-app.listen(port, () => console.log('listening on port 5000'))
+app.listen(port, () => console.log('listening on port 4675'))
 
 app.use(express.static(path.join(__dirname)));
 
