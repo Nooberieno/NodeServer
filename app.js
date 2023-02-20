@@ -20,7 +20,7 @@ app.get("/", function(req, res){
     res.sendFile(__dirname + "/index.html")
 })
 
-app.listen(port, () => console.log('listening on port ${port}'))
+app.listen(port, () => console.log('listening on port 5000'))
 
 app.use(express.static(path.join(__dirname)));
 

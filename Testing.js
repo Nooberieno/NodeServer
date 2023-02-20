@@ -63,7 +63,6 @@ function reinstateButtons(){
     ElementTest.position = "absolute";
 }
 
--
 function LogValue(){
    let value = document.getElementById("inputbox").value;
    console.log(value)
