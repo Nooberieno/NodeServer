@@ -1,13 +1,17 @@
-const express = require('express');
-const fs = require('fs')
+import express from 'express';
+import rateLimit from 'express-rate-limit';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import * as fs from 'fs'
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 const app = express();
 const port = process.env.PORT || 5000;
 
-var RateLimiter = require('express-rate-limit');
-var Limiter = RateLimiter({
-    windowMs: 900,
-    Max: 20
+var Limiter = rateLimit({
+    windowMs: 1,
+    Max: 25
 })
 
 app.use(Limiter)
@@ -18,7 +22,7 @@ app.get("/", function(req, res){
 
 app.listen(port, () => console.log('listening on port ${port}'))
 
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname)));
 
 app.use(function(req, res, next){
     res.setHeader(
@@ -29,10 +33,11 @@ app.use(function(req, res, next){
 })
 
 const Content = "content"
-fs.appendFile("./test.txt", Content + "\n", err =>{
+function addToFile(){fs.appendFile("./test.txt", Content + "\n", err =>{
     if(err){
         console.error(err)
     }
     console.log("file saved succesfully")
 
 })
+}

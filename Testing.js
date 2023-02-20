@@ -105,3 +105,8 @@ document.onkeyup=(event)=>{
             break;
     }
 }
+
+function addToFile(){
+    const xhttp = new XMLHttpRequest();
+    xhttp.open()
+}
