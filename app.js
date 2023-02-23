@@ -23,6 +23,7 @@ app.get("/", function(req, res){
 app.listen(port, () => console.log('listening on port 4675'))
 
 app.use(express.static(path.join(__dirname)));
+app.use(express.urlencoded({extended: false}));
 
 app.use(function(req, res, next){
     res.setHeader(
@@ -33,7 +34,8 @@ app.use(function(req, res, next){
 })
 
 const Content = "content"
-function addToFile(){fs.appendFile("./test.txt", Content + "\n", err =>{
+function addToFile()
+{fs.appendFile("./test.txt", Content + "\n", err =>{
     if(err){
         console.error(err)
     }
@@ -42,7 +44,12 @@ function addToFile(){fs.appendFile("./test.txt", Content + "\n", err =>{
 })
 }
 
-app.get('/addToFile', (req, res) =>{
+app.get("/addToFile", (req, res) =>{
     addToFile();
     res.send('Succes');
+})
+
+app.post("/Testing", (req, res)=>{
+    console.log("Succes")
+    res.send("succes")
 })
