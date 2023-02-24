@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/Nooberieno/Nooberieno.github.io#readme",
   "dependencies": {
+    "api-mount": "^1.0.13",
+    "api-mount-client": "^1.0.13",
+    "api-mount-server": "^1.0.13",
+    "connect": "^3.7.0",
     "express": "^4.18.2",
     "express-rate-limit": "^6.7.0",
     "mysql": "^2.18.1"

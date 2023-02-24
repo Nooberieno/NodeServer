@@ -107,7 +107,7 @@ document.onkeyup=(event)=>{
 
 function AddToFile(){
     const xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "/Testing", true)
+    xhttp.open("get", "/123", true)
     xhttp.setRequestHeader("Content-type", "application/json")
     xhttp.onreadystatechange = function() {
         console.log(this.responseText)

@@ -3,6 +3,7 @@ import rateLimit from 'express-rate-limit';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import * as fs from 'fs'
+import url from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -18,12 +19,25 @@ app.use(Limiter)
 
 app.get("/", function(req, res){
     res.sendFile(__dirname + "/index.html")
+
+    var url_parts = url.parse(req.url, true)
+    var query = url_parts.query
+    
+    if (req.method !== 'GET'){
+        switch(url_parts.pathname){
+            case "/123" :
+            addToFile()
+            res.end
+            break
+
+        }
+    }
 })
 
 app.listen(port, () => console.log('listening on port 4675'))
 
 app.use(express.static(path.join(__dirname)));
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 
 app.use(function(req, res, next){
     res.setHeader(
@@ -49,7 +63,7 @@ app.get("/addToFile", (req, res) =>{
     res.send('Succes');
 })
 
-app.post("/Testing", (req, res)=>{
+app.get("/Testing", (req, res)=>{
     console.log("Succes")
     res.send("succes")
 })
