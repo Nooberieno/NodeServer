@@ -1,55 +1,16 @@
-import express from 'express';
-import rateLimit from 'express-rate-limit';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import * as http from 'http'
 import * as fs from 'fs'
-import url from 'url'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import { response } from 'express'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-const app = express();
-const port = process.env.PORT || 4675;
+const port = process.env.PORT || 4675
+const Content = "Content"
 
-var Limiter = rateLimit({
-    windowMs: 1,
-    Max: 5
-})
-
-app.use(Limiter)
-
-app.get("/", function(req, res){
-    res.sendFile(__dirname + "/index.html")
-
-    var url_parts = url.parse(req.url, true)
-    var query = url_parts.query
-    
-    if (req.method !== 'GET'){
-        switch(url_parts.pathname){
-            case "/123" :
-            addToFile()
-            res.end
-            break
-
-        }
-    }
-})
-
-app.listen(port, () => console.log('listening on port 4675'))
-
-app.use(express.static(path.join(__dirname)));
-app.use(express.urlencoded({extended: true}));
-
-app.use(function(req, res, next){
-    res.setHeader(
-        'Content-Security-Policy',
-        "default-src 'self'; connect-src 'self'"
-    );
-    next;
-})
-
-const Content = "content"
-function addToFile()
-{fs.appendFile("./test.txt", Content + "\n", err =>{
+function addtofile(){
+    {fs.appendFile("./test.txt", Content + "\n", err =>{
     if(err){
         console.error(err)
     }
@@ -57,13 +18,35 @@ function addToFile()
 
 })
 }
+}
 
-app.get("/addToFile", (req, res) =>{
-    addToFile();
-    res.send('Succes');
-})
+const server = http.createServer(async(req, res)=>{
+    if (req.url == "/file" && req.methode == "GET"){
+        res.setHeader(
+            'Content-Security-Policy',
+            "default-src 'self'; connect-src 'self'"
+        );
+        addtofile()
+        res.end
+    }
 
-app.get("/Testing", (req, res)=>{
-    console.log("Succes")
-    res.send("succes")
-})
+    else{
+        fs.readFile(__dirname + "/index.html", function(err, html){
+            if (err) throw err;
+            res.setHeader(
+                'Content-Security-Policy',
+                "default-src 'self'; connect-src 'self'"
+            )
+            res.writeHead(200, {"Content-Type": "text/html"})
+            res.write(html)
+            res.end
+        })
+
+    }
+}
+)
+
+server.listen(port, () =>{
+    console.log("server running")
+}
+)
